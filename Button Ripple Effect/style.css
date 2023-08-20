@@ -1,0 +1,51 @@
+ /* --------------------BODY-------------------- */
+ body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: aliceblue;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* --------------------BUTTON------------------- */
+.btn {
+    background-color: #4797ff;
+    padding: 30px 50px;
+    border-radius: 90px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+/* ---------------Move button text top----------------- */
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* --------------Making effect---------------- */
+.btn::before {
+    content: "";
+    position: absolute;
+    background-color: #4dff47;
+    width: 0;
+    height: 0;
+    left: var(--xPos);
+    top: var(--yPos);
+    transform: translate(-50%, -50%);
+    border-radius: 90%;
+    transition: width .9s, height .9s;
+}
+
+/* --------------Apply the effect while Hovering----------------- */
+.btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
